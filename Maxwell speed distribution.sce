@@ -45,7 +45,7 @@ disp("Calculated value of Most Probable Velocity: "+string(v(mp)))
 temp = [300, 500, 1200, 1500, 2000, 2500]
 for i = 1:6
     function y=f(v)
-        y = ((4*%pi)*(m/(2*%pi*kb*temp(i))^(3/2)*v^2).*exp((-m*v^2)/(2*kb*temp(i))))
+        y = ((4*%pi)*(m/(2*%pi*kb*temp(i)))^(3/2)*v^2).*exp((-m*v^2)/(2*kb*temp(i)))
     endfunction
     func = f(v)
     show_window(2)
@@ -60,7 +60,7 @@ m_atomic = [4 20 40 83 132 222]*1.67*(1D-27)
 velo = linspace (0, 5000, N)
 for j = 1:6
     function y=f(velo) 
-        y = ((4*%pi)*(m_atomic(j)/(2*%pi*kb*T)^(3/2)*velo^2).*exp((-m_atomic(j)*velo^2)/(2*kb*T))) 
+        y = ((4*%pi)*(m_atomic(j)/(2*%pi*kb*T))^(3/2)*velo^2).*exp((-m_atomic(j)*velo^2)/(2*kb*T))
     endfunction
     func_m = f(velo)
     show_window(3)
